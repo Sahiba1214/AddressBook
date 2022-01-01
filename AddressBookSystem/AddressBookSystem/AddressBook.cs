@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+
 using System.Text;
+using System.Linq;
 
 namespace AddressBookSystem
 {
@@ -120,6 +123,19 @@ namespace AddressBookSystem
             Console.WriteLine("Oops Unique Contacts does not exist !!! Please create a Unique contact list");
             return;
         }
+        public void CheckDuplicateEntry()
+        {
+            Console.WriteLine("Enter the name to check : ");
+            string check = Console.ReadLine();
+            var person = addressList.Find(e => e.FirstName.Equals(check));
+            if (person != null)
+            {
+                Console.WriteLine("This Contact already exists with same First Name : " + check);
+            }
+            else
+            {
+                Console.WriteLine("You Can Proceed");
+            }
+        }
     }
-
 }

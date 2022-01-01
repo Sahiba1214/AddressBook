@@ -83,6 +83,9 @@ namespace AddressBookSystem
                         addressBook.DisplayUniqueContacts();
                         break;
                     case 7:
+                        addressBook.CheckDuplicateEntry();
+                        break;
+                    case 8:
                         flag = false;
                         break;
                 }
